@@ -1,1 +1,42 @@
-<p>editar-vehiculo works!</p>
+<div class="row">
+    <h3 class="center-align">Editar Vehiculos</h3>
+    <article class="col s6 offset-s3">
+        <form [formGroup]="fgValidator" (ngSubmit)="EditarVehiculo()" method="POST" action="formulario-contacto.php">
+            <input type="hidden" formControlName="id">
+            <div class="input-field">
+                <label for="marca" class="active">Marca</label>
+                <input formControlName="marca" type="text" name="marca" required>
+            </div>
+
+            <div class="input-field">
+                <label for="modelo" class="active">Modelo</label>
+                <input formControlName="modelo" type="text" name="modelo" required>
+            </div>
+
+            <div class="input-field">
+                <label for="linea" class="active">Linea</label>
+                <input formControlName="linea" type="text" name="linea" required>
+            </div>
+            <div class="input-field">
+                <label for="precio" class="active">Precio</label>
+                <input formControlName="precio" type="text" name="precio" required>
+            </div>
+            <div class="input-field">
+                <label for="caracteristicas" class="active">Caracteristicas</label>
+                <input formControlName="caracteristicas" type="text" name="caracteristicas" required>
+            </div>
+
+            <div class="input-field">
+                <label for="imagen" class="active">Imagen</label>
+                <input formControlName="imagen" type="text" name="imagen" required>
+            </div>
+
+            <p class="center-align">
+                <button [disabled]= "!fgValidator.valid" class="waves-effect waves-light btn" type="submit"><i
+                        class="material-icons right">send</i>Enviar</button>
+            </p>
+
+        </form>
+
+    </article>
+</div>

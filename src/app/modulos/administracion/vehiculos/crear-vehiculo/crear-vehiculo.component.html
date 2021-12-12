@@ -1,1 +1,41 @@
-<p>crear-vehiculo works!</p>
+<div class="row">
+    <h3 class="center-align">Crear Vehiculos</h3>
+    <article class="col s6 offset-s3">
+        <form [formGroup]="fgValidator" (ngSubmit)="GuardarVehiculo()" method="POST" action="formulario-contacto.php">
+            <div class="input-field">
+                <label for="marca">Nombre</label>
+                <input formControlName="marca" type="text" name="marca" required>
+            </div>
+
+            <div class="input-field">
+                <label for="modelo">Modelo</label>
+                <input formControlName="modelo" type="text" name="modelo" required>
+            </div>
+
+            <div class="input-field">
+                <label for="linea">Linea</label>
+                <input formControlName="linea" type="text" name="linea" required>
+            </div>
+            <div class="input-field">
+                <label for="precio">Precio</label>
+                <input formControlName="precio" type="text" name="precio" required>
+            </div>
+            <div class="input-field">
+                <label for="caracteristicas">Caracteristicas</label>
+                <input formControlName="caracteristicas" type="text" name="caracteristicas" required>
+            </div>
+
+            <div class="input-field">
+                <label for="imagen">Imagen</label>
+                <input formControlName="imagen" type="text" name="imagen" required>
+            </div>
+
+            <p class="center-align">
+                <button [disabled]= "!fgValidator.valid" class="waves-effect waves-light btn" type="submit"><i
+                        class="material-icons right">send</i>Enviar</button>
+            </p>
+
+        </form>
+
+    </article>
+</div>

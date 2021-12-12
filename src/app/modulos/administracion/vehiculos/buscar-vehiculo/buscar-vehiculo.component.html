@@ -1,1 +1,134 @@
-<p>buscar-vehiculo works!</p>
+<Section>
+
+    <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator"
+                src="https://i.ibb.co/02Gn4LV/Copia-de-Car-Sale-Promotion-Facebook-Cover-Banner-Hecho-con-Poster-My-Wall.jpg">
+        </div>
+        <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Visita nuestra coleccion de Autos! <i
+                    class="material-icons right">more_vert</i></span>
+            <p><a href="#">Invierte en tu felicidad.</a></p>
+        </div>
+        <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+    </div>
+    <div class="container">
+        <a routerLink="/administracion/crear-vehiculo"><i class="medium material-icons">add_circle</i></a>
+
+
+
+        <div *ngFor="let p of listadoRegistros" class="row">
+            <div class="col s8 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{p.imagen}}">
+                        <span class="card-title">Vehiculo</span>
+                        <a routerLink="/administracion/crear-vehiculo"
+                            class="btn-floating halfway-fab waves-effect waves-light red"><i
+                                class="material-icons">add</i></a>
+
+                    </div>
+                    <div class="card-content">
+                        <h3>{{p.marca}}</h3>
+                        <h3>{{p.linea}}</h3>
+                        <p style="color: chocolate;">{{p.precio}}</p>
+                        <p>{{p.caracteristicas}}</p>
+                        <th>
+                            <a routerLink="/administracion/editar-vehiculo/{{p.id}}"
+                                class="btn-floating waves-effect waves-light red">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </th>
+                        <th>
+                            <a routerLink="/administracion/eliminar-vehiculo/{{p.id}}"
+                                class="btn-floating  waves-effect waves-light red">
+                                <i class="material-icons">delete</i>
+                            </a>
+                        </th>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col s6 ">
+                        <div class="card red darken-4">
+                            <div class="card-content white-text">
+                                <span class="card-title">Colección Vehiculos </span>
+                                <p>Escoge el tuyo!.</p>
+
+                                <div class="card-action">
+
+                                    <span class="material-icons">
+                                        shopping_cart
+                                    </span>
+                                    <span class="material-icons">
+                                        payments
+                                    </span>
+                                    <span class="material-icons">
+                                        card_giftcard
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</Section>
+
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Marca
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Linea
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Caracteristicas
+            </th>
+            <th>
+                Imagen
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+            <td>
+                {{p.marca}}
+            </td>
+            <td> {{p.modelo}}</td>
+            <td>{{p.linea}}</td>
+            <td>{{p.precio}}</td>
+            <td>{{p.caracteristicas}}</td>
+            <td><img src="{{p.imagen}}" class="imagenProducto"></td>
+            <td>
+                <a routerLink="/administracion/editar-vehiculo/{{p.id}}">
+                    <i class="material-icons">edit</i>
+                </a>
+            </td>
+            <td>
+                <a routerLink="/administracion/eliminar-vehiculo/{{p.id}}">
+                    <i class="material-icons">delete</i>
+                </a>
+
+
+            </td>
+        </tr>
+    </tbody>
+
+</table>

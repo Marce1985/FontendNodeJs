@@ -1,20 +1,22 @@
 <nav>
-    <div class="nav-wrapper">
-      <a routerlink="#!" class="brand-logo">Logo</a>
+    <div class="nav-wrapper grey darken-3 ">
+      <a routerlink="#!" class="brand-logo">Consecionario DevTeam</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/administracion/usuarios">Usuarios</a></li>
-        <li><a routerLink="/administracion/vehiculos">Vehículos</a></li>
-        <li><a routerLink="/seguridad/cambio-clave">Cambiar Clave</a></li>
-        <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-usuarios">Usuarios</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-vehiculos">Vehículos</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar Clave</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+        <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a routerLink="/administracion/usuarios">Usuarios</a></li>
-    <li><a routerLink="/administracion/vehiculos">Vehículos</a></li>
-    <li><a routerLink="/seguridad/cambio-clave">Cambiar Clave</a></li>
-    <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-usuarios">Usuarios</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-vehiculos">Vehículos</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cambio-clave">Cambiar Clave</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesion</a></li>
+    <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
  
   </ul>

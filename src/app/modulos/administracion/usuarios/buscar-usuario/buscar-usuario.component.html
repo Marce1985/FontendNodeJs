@@ -1,1 +1,57 @@
-<p>buscar-usuario works!</p>
+<div class="container">
+<a routerLink="/administracion/crear-usuario"><i class="medium material-icons">person_add</i></a>
+<h3 class="row">LISTA DE USUARIOS</h3>    
+<table class="table responsive">
+    <thead>
+        <tr>
+            <th>
+                Identificacion
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Correo
+            </th>
+            <th>
+                Clave
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of listadoRegistros">
+            <td>
+                {{u.identificacion}}
+            </td>
+            <td> {{u.nombres}}</td>
+            <td>{{u.apellidos}}</td>
+            <td>{{u.telefono}}</td>
+            <td>{{u.correo}}</td>
+            <td>{{u.clave}}</td>
+            <td>
+                <a routerLink="/administracion/editar-usuario/{{u.id}}">
+                    <i class="material-icons">edit</i>
+                </a>
+            </td>
+            <td>
+                <a routerLink="/administracion/eliminar-usuario/{{u.id}}">
+                    <i class="material-icons">delete</i>
+                </a>
+            </td>
+            <td>
+                <a routerLink="/seguridad/cambio-clave/{{u.id}}">
+                    <i class="material-icons">vpn_key</i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+</div>
